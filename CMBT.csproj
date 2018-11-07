@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50E977CC-72F2-4B46-B69B-BCA71CFF5AD0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMBT</RootNamespace>
+    <AssemblyName>CMBT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CMBT.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvReader, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvTools.1.0.12\lib\CsvReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="InTheHand.Net.Personal, Version=3.5.605.0, Culture=neutral, PublicKeyToken=ea38caa273134499, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\32feet.NET\NET\InTheHand.Net.Personal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Mitov.AudioLabBasic, Version=7.6.0.0, Culture=neutral, PublicKeyToken=d6082b20afed4658, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.AudioLabBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.AudioLabBasic.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=aa5ab84bbe6efa61, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.AudioLabBasic.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.AudioLabEssential, Version=7.6.0.0, Culture=neutral, PublicKeyToken=581f0b5694b30d4a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.AudioLabEssential.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.AudioLabEssential.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=221910775bbe4125, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.AudioLabEssential.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.BasicLab, Version=7.6.0.0, Culture=neutral, PublicKeyToken=54b8a1f38c94221a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.BasicLab.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.BasicLab.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=12035975aedeb9ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.BasicLab.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.MediaLabBasic, Version=7.6.0.0, Culture=neutral, PublicKeyToken=7bad479ac8c4b586, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.MediaLabBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.MediaLabBasic.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=a23096ba0f884861, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.MediaLabBasic.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.OpenWireEditor, Version=7.6.0.0, Culture=neutral, PublicKeyToken=ca3848e8271c0c4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.OpenWireEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.OpenWireStudioAudioHost, Version=7.6.0.0, Culture=neutral, PublicKeyToken=12800bf2246c1e9c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.OpenWireStudioAudioHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.OpenWireStudioAudioHost.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=308a6738bcf9f4a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.OpenWireStudioAudioHost.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.OpenWireStudioHost, Version=7.6.0.0, Culture=neutral, PublicKeyToken=ba56b6912252ff1b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.OpenWireStudioHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.OpenWireStudioHost.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=8d98c7dce2d05bc1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.OpenWireStudioHost.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.PlotLabBasic, Version=7.6.0.0, Culture=neutral, PublicKeyToken=1bb0b8a97236ac2e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.PlotLabBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.PlotLabBasic.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=21cee00db9a35e0d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.PlotLabBasic.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLab, Version=7.6.0.0, Culture=neutral, PublicKeyToken=0f7dd317c9b1aa3e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLab.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLab.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=a6b2161c42998a18, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLab.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLabAdditional, Version=7.6.0.0, Culture=neutral, PublicKeyToken=11c13558307fd03f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLabAdditional.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLabAdditional.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=f4d8f639294fb855, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLabAdditional.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLabBasic, Version=7.6.0.0, Culture=neutral, PublicKeyToken=0b44e28582c522cf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLabBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.SignalLabBasic.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=424d84261f680115, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.SignalLabBasic.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.TimingLabBasic, Version=7.6.0.0, Culture=neutral, PublicKeyToken=0381e4e5860a33cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.TimingLabBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mitov.TimingLabBasic.Design, Version=7.6.0.0, Culture=neutral, PublicKeyToken=f5dd6f13f1a34348, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\LabPacks\DotNET\Bin\4.0\Mitov.TimingLabBasic.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=15.1.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NationalInstruments.UI, Version=15.0.40.49153, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.UI.WindowsForms, Version=15.0.40.49153, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NAudio, Version=1.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BT Demo App\BT Demo App\bin\Debug\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioAnalyzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudioAnalyzer.Designer.cs">
+      <DependentUpon>AudioAnalyzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AudioMeasurement_Left.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudioMeasurement_Left.Designer.cs">
+      <DependentUpon>AudioMeasurement_Left.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BTAudioMeasurement_Left.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BTAudioMeasurement_Left.Designer.cs">
+      <DependentUpon>BTAudioMeasurement_Left.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BTAudioMeasurement_Right.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BTAudioMeasurement_Right.Designer.cs">
+      <DependentUpon>BTAudioMeasurement_Right.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CB-55 Volume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CB-55 Volume.Designer.cs">
+      <DependentUpon>CB-55 Volume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AudioMeasurement_Right_1KHz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudioMeasurement_Right_1KHz.Designer.cs">
+      <DependentUpon>AudioMeasurement_Right_1KHz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSR8635_Cfg.cs" />
+    <Compile Include="DUT Connections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DUT Connections.Designer.cs">
+      <DependentUpon>DUT Connections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fail.Designer.cs">
+      <DependentUpon>Fail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BTAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BTAuto.Designer.cs">
+      <DependentUpon>BTAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonPressBT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ButtonPressBT.Designer.cs">
+      <DependentUpon>ButtonPressBT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INIFile.cs" />
+    <Compile Include="Programmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer.Designer.cs">
+      <DependentUpon>Programmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestEngineAPI.cs" />
+    <Compile Include="TP4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP4.Designer.cs">
+      <DependentUpon>TP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasurementGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeasurementGuide.Designer.cs">
+      <DependentUpon>MeasurementGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Power and DMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Power and DMM.Designer.cs">
+      <DependentUpon>Power and DMM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PowerUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PowerUp.Designer.cs">
+      <DependentUpon>PowerUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Success.Designer.cs">
+      <DependentUpon>Success.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP2.Designer.cs">
+      <DependentUpon>TP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP3.Designer.cs">
+      <DependentUpon>TP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unpairing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unpairing.Designer.cs">
+      <DependentUpon>Unpairing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USBDevices.cs" />
+    <Compile Include="USBEnumeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USBEnumeration.Designer.cs">
+      <DependentUpon>USBEnumeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AudioAnalyzer.resx">
+      <DependentUpon>AudioAnalyzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioMeasurement_Left.resx">
+      <DependentUpon>AudioMeasurement_Left.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonPressBT.resx">
+      <DependentUpon>ButtonPressBT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BTAudioMeasurement_Left.resx">
+      <DependentUpon>BTAudioMeasurement_Left.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BTAudioMeasurement_Right.resx">
+      <DependentUpon>BTAudioMeasurement_Right.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CB-55 Volume.resx">
+      <DependentUpon>CB-55 Volume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioMeasurement_Right_1KHz.resx">
+      <DependentUpon>AudioMeasurement_Right_1KHz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DUT Connections.resx">
+      <DependentUpon>DUT Connections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fail.resx">
+      <DependentUpon>Fail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BTAuto.resx">
+      <DependentUpon>BTAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasurementGuide.resx">
+      <DependentUpon>MeasurementGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Power and DMM.resx">
+      <DependentUpon>Power and DMM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerUp.resx">
+      <DependentUpon>PowerUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer.resx">
+      <DependentUpon>Programmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Success.resx">
+      <DependentUpon>Success.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP2.resx">
+      <DependentUpon>TP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP3.resx">
+      <DependentUpon>TP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP4.resx">
+      <DependentUpon>TP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unpairing.resx">
+      <DependentUpon>Unpairing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBEnumeration.resx">
+      <DependentUpon>USBEnumeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CM-BT.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

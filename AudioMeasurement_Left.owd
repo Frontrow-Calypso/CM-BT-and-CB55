@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Items>
+  <Component Name="scope1" X="256" Y="432" />
+  <Component Name="wavePlayer1" X="448" Y="432" />
+  <Component Name="audioOut1" X="672" Y="432" />
+  <Component Name="genericReal1" X="880" Y="256" />
+</Items>

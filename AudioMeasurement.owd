@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Items>
+  <Component Name="audioToReal1" X="256" Y="272" />
+  <Component Name="scope1" X="480" Y="448" />
+  <Component Name="wavePlayer1" X="672" Y="448" />
+  <Component Name="audioOut1" X="912" Y="256" />
+  <Component Name="audioIn1" X="1312" Y="256" />
+  <Component Name="realTodB1" X="1344" Y="432" />
+  <Component Name="rmsMeter1" X="1520" Y="256" />
+</Items>
